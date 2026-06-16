@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffe066;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 750px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #006400;
+  margin-bottom: 15px;
+  font-size: 38px;
+}
+
+.game-info,
+.players-info {
+  background-color: #ffffff;
+  border: 3px solid #000000;
+  padding: 12px;
+  margin: 10px auto;
+  border-radius: 8px;
+}
+
+.game-info p,
+.players-info p {
+  font-size: 18px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+#turn {
+  color: #0000cc;
+}
+
+#dice {
+  color: #cc0000;
+}
+
+#message {
+  color: #222222;
+}
+
+#dice-box {
+  width: 75px;
+  height: 75px;
+  margin: 10px auto;
+  background-color: #ffffff;
+  border: 4px solid #000000;
+  border-radius: 12px;
+  color: #000000;
+  font-size: 42px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roll-animation {
+  animation: diceRoll 0.45s ease;
+}
+
+@keyframes diceRoll {
+  0% {
+    transform: rotate(0deg) scale(1);
+    background-color: #ffffff;
+  }
+
+  25% {
+    transform: rotate(12deg) scale(1.08);
+    background-color: #ff6b6b;
+  }
+
+  50% {
+    transform: rotate(-12deg) scale(1.12);
+    background-color: #4dabf7;
+  }
+
+  75% {
+    transform: rotate(10deg) scale(1.08);
+    background-color: #51cf66;
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1);
+    background-color: #ffffff;
+  }
+}
+
+.players-info {
+  background-color: #74c0fc;
+}
+
+#board {
+  width: 600px;
+  height: 600px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  border: 4px solid #000000;
+}
+
+.cell {
+  border: 1px solid #000000;
+  background-color: #fff3bf;
+  position: relative;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.cell:nth-child(even) {
+  background-color: #ffd43b;
+}
+
+.number {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+}
+
+.snake {
+  background-color: #ff8787 !important;
+}
+
+.ladder {
+  background-color: #8ce99a !important;
+}
+
+.note {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  font-size: 9px;
+  color: #000000;
+}
+
+.tokens {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+
+.token {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player1 {
+  background-color: #e03131;
+}
+
+.player2 {
+  background-color: #1864ab;
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #2f9e44;
+  color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #087f5b;
+}
+
+#restart-btn {
+  background-color: #e03131;
+}
+
+#restart-btn:hover {
+  background-color: #c92a2a;
+}
+
+@media (max-width: 650px) {
+  #board {
+    width: 330px;
+    height: 330px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .cell {
+    font-size: 8px;
+  }
+
+  .note {
+    font-size: 6px;
+  }
+
+  .tokens {
+    top: 14px;
+  }
+
+  .token {
+    width: 14px;
+    height: 14px;
+    font-size: 8px;
+  }
+
+  #dice-box {
+    width: 60px;
+    height: 60px;
+    font-size: 34px;
+  }
+}
